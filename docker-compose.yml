@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+
+#  adminer:
+#    image: adminer
+#    ports:
+#      - 8080:8080
+
+  rabbitmq:
+    image: inss/rabbitmq:management
+    build:
+      context: rabbitmq
+    hostname: rabbit
+    ports:
+      - 5672:5672
+      - 15672:15672
