@@ -4,6 +4,7 @@ services:
 
   postgres:
     image: postgres
+    hostname: postgres
     environment:
       POSTGRES_PASSWORD: password
     ports:
