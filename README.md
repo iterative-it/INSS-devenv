@@ -39,3 +39,6 @@ Clear all the containers and images with:
 docker rm -f $(docker ps -a -q)
 docker rmi -f $(docker images -q)
 ```
+
+docker build -t jenkins/dotnet .
+docker run -u root --rm -d -p 8080:8080 -p 50000:50000 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkins/dotnet
