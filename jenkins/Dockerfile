@@ -1,5 +1,8 @@
 FROM jenkins/jenkins:lts
 
+# Switch to root to install Docker
+USER root
+
 RUN apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
 
 # Install docker cle
@@ -10,3 +13,6 @@ RUN apt-get update && apt-get install -y docker-ce-cli
 # Install docker-compose
 # RUN apt-get update && apt-get install -y py-pip python-dev libffi-dev openssl-dev gcc libc-dev make
 RUN curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
+
+#Switch back to the jenkins user
+USER jenkins
