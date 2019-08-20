@@ -38,6 +38,7 @@ Clear all the containers and images with:
 ```
 docker rm -f $(docker ps -a -q)
 docker rmi -f $(docker images -q)
+docker volume prune
 ```
 
 docker build -t jenkins/dotnet .
