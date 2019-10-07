@@ -16,6 +16,9 @@
     },
     {
       "name": "rpsredundancyclaimorchestration"
+    },
+    {
+      "name": "rps_document_generation_orchestration"
     }
   ],
   "permissions": [
@@ -36,6 +39,13 @@
     {
       "user": "guest",
       "vhost": "rpsredundancyclaimorchestration",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "guest",
+      "vhost": "rps_document_generation_orchestration",
       "configure": ".*",
       "write": ".*",
       "read": ".*"
